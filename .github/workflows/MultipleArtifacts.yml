@@ -1,4 +1,4 @@
-name: K6 Performance Tests || Reports for each step
+name: K6 Performance Tests || Reports for each step Multiple artifacts
 on:
   workflow_dispatch:
 
