@@ -1,20 +1,18 @@
 name: K6 Performance Tests
 on:
-  push:
- 
+  workflow_dispatch:
+
 jobs:
   performance-tests:
     runs-on: ubuntu-latest
     env:
       K6_BROWSER_ENABLED: true
 
-    
-    
-    
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-      
+
       - name: Run api k6 test
         uses: grafana/k6-action@v0.3.0
         with:
@@ -36,7 +34,3 @@ jobs:
         with:
           name: k6-browser-report-summary
           path: LTSummaryReport.html
-  
-    
-
-    

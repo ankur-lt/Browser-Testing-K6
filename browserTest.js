@@ -1,13 +1,13 @@
     import { chromium } from 'k6/experimental/browser';
     import { check } from 'k6';
     import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/2.4.0/dist/bundle.js";
-   
-   
-    export let options = {
-        vus: 5,
-        iterations: 10
 
-    }
+
+    // export let options = {
+    //     vus: 1,
+    //     iterations: 1
+    //
+    // }
 
     export default async function () {
         const browser = chromium.launch({ headless: false });

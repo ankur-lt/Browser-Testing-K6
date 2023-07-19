@@ -1,15 +1,15 @@
 name: K6 Performance Tests || Reports for each step
 on:
-  push:
- 
+  workflow_dispatch:
+
 jobs:
   performance-tests:
     runs-on: ubuntu-latest
     env:
-      K6_BROWSER_ENABLED: true  
-      
-    
-    
+      K6_BROWSER_ENABLED: true
+
+
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
