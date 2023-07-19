@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install Chromium
-        run: apk update && apk add --no-cache chromium
+        run: apt install -y chromium-browser
 
       - name: Run browser k6 test
         uses: grafana/k6-action@v0.3.0
