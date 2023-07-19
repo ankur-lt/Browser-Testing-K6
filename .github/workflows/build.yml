@@ -15,8 +15,14 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: Install Chromium
-        run: apt install -y chromium-browser
+      - name: Install Chrome
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: beta
+        id: setup-chrome
+      - run: |
+          echo Installed chromium version: ${{ steps.setup-chrome.outputs.chrome-version }}
+          ${{ steps.setup-chrome.outputs.chrome-path }} --version
 
       - name: Run browser k6 test
         uses: grafana/k6-action@v0.3.0
