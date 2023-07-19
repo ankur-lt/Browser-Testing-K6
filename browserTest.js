@@ -10,12 +10,15 @@
     // }
 
     export default async function () {
+        console.log('1.Launching browser=====>')
         const browser = chromium.launch({ headless: false });
+        console.log('2. new context=====>')
         const context = browser.newContext();
         const page = context.newPage();
 
+        console.log('3. navigating=====>')
         await page.goto('https://ecommerce-playground.lambdatest.io/index.php?route=account/login');
-         page.screenshot({ path: 'screenshots/browserTestScreenshot.png' });
+        page.screenshot({ path: 'screenshots/browserTestScreenshot.png' });
 
         page.locator('#input-email').type('lambdatest.Cypress@disposable.com');
         page.locator('#input-password').type('Cypress123!!');
